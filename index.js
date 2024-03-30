@@ -80,6 +80,6 @@ elements.forEach(element => {
         if(end==0)
         cross(event);
         else
-            console.alert("Game finished");
+            alert("Game finished");
     })
 });
