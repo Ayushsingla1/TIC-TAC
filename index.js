@@ -31,6 +31,7 @@ function cross(event){
             if(element1.textContent=='') return;
             content.textContent=`${style}-loss`;
             end=1;
+
         }
         else if(element1.textContent==element4.textContent && element4.textContent==element7.textContent){
             if(element1.textContent=='') return;
@@ -77,9 +78,18 @@ function cross(event){
     }
 elements.forEach(element => {
     element.addEventListener('click',(event)=>{
-        if(end==0)
-        cross(event);
-        else
-            alert("Game finished");
+    if(end==0){
+            cross(event);
+        }
+    else{
+        alert("Game finished");
+        
+        end=0;
+        elements.forEach(element=>{
+            element.textContent="";
+        })
+        count=0;
+        content.textContent=" ";
+    }
     })
 });
